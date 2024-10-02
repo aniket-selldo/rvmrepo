@@ -316,6 +316,12 @@ require 'bcrypt'
     Dir.pwd >> Return then current dir location
     Gem::Platform.local >> reutrn os
 
+    >>>>>> 
+    for extra help from VS COde for suggation in html use in setting >> 
+    "emmet.includeLanguages": { "erb": "html", "ruby": "html"}
+    >> Add above json in emmet seeting json of vs code
+
+
     ========================================= Rails ===================================================
 
     1. Rails use MVC >> model view controller >>  create speration between presentation layer and buiness logic 
@@ -343,10 +349,14 @@ require 'bcrypt'
    13. > def home
        >  render html: 'Hello World!'
        > end
-	Above coed you need to add in controller 
+	>>>>>>>>> Above coed you need to add in controller 
    14. > def home
        > end
-	This will expect a home.html.erb template under the pages folder under views (home.html.erb)
+	>>>>>>>>> This will expect a home.html.erb template under the pages folder under views (home.html.erb)
+   15. If you want to add about page then in route you can add below code to navigate in about page >> http://localhost:3000/about
+      >  root "pages#home"
+      >  get "about", to: "pages#about"
+   16. 
 
 
 
