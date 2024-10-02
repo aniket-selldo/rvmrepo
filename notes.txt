@@ -1,0 +1,352 @@
+======================================= Info =====================================================
+
+1) only two spaces is allowd for syntax not 4 or 5
+2) this_is_snake_case >> Variable and method name
+3) camelCase >> use for class name in java but in ROR >> CamelCase
+======================================= Print =====================================================
+
+say = 'I Love Ruby'
+puts say
+puts say.upcase
+
+>> Puts >> I Love Ruby >> and then move to next line >> not return anything
+>> P >> "I Love Ruby" >> same as puts but return values also
+>> print >> in same line will print >> return nil
+======================================= CMD =====================================================
+
+1)pwd >>  command in terminal will return path of directory
+2)irb
+3)ctr+d >> reutrn from irb
+4)clear >> clear all terminal
+5) ctr + shift + ~ => will create new powershell
+======================================== Method ====================================================
+def addTwoNum (a , b)
+ return p a.to_f+b.to_f
+end
+
+puts "The answer of addition is => #{addTwoNum(10,20)} <=" 
+========================================= String ===================================================
+name = "aniket"
+name.methods >> Will return all methods related to string
+1) .capitalize! >> Upcase first letter of string
+2) name = "" >> p name.empty? >> will return true
+3) name = "" >> p name.nil? >> will return false
+4) \ >> this remove special purpose from string >> "Aniket \#{Name}"
+5) gets.chomp >> Will take input from user and return it
+puts "Please enter your name"
+ame = gets.chomp
+p "Your name is #{ame}"
+6) 20.times {puts "-"} OR "-"*20
+7) rand(10) >> will return any random numebr from 0 to 9
+8) rand >> will return number between 0 to 1
+========================================= Arrays ===================================================
+a = [1,2,3,4,5,6,7,8,8,9,0]
+p a.size >> return lenght >> Not as java >> this will retunrn actual size
+1)a.class >> Range
+2)a.shuffle >> shuffle all
+3)1..10 >> return array
+4)a.to_a.class >>  Arrays
+5)1..10 >> include final value "10" OR 1...10 >> Exclude final value 
+6)a<<11 -> add enter at last of array
+7)a.unshift("Aniket") -> add Aniket at first of array and also save it "No need to add ! at last"
+8)a.append("Anu") -> Add Anu at last of array || .push("Aniket") >> Will also push at last 
+9).uniq >> This wil sort all unique from array
+10) .last || .first
+11) .empty?
+12) .include?("Aniket") >> will return true false on the besis of found
+13) .push("value") >> push at last & .pop will return last value and removed it from array
+14) .join >> will join all array element >eg> 123343445543
+15) .join("-") >> will join all array element >eg> 1-2-3-3-4-3-4-4-5-5-4-3
+16) .split("-") >> ["1","2","3","4","5","6","7"]
+17) name = %w(Aniket Rahul Khandiod) >> p name.size >> 3 >> z=_ >> store array in z
+18) s=%w(Aniket Rahul Khandiod) >> s.each do |foods| >> p foods +" " >>end 
+19) s.each {|food| print food + "-"}
+20) a .push true ? 1 : 0 >> wil add 1 in array AND  a << true ? 1 : 0 will add true at last 
+21) p [*1..10].to_a   ||   p [*1..3, *?a..?c].to_a 
+22) array.sort.reverse! >> sort array in reverse
+
+========================================= Hash ===================================================
+
+name = {a: 10, b: 11}
+p name[:b]
+p name.keys
+p name.values
+
+>>>>>>>>>>>>
+
+h = {a: 10, b: 20, c: 30, d: 40}
+h.each {|k,v| p v}
+
+>>>>>>>>>>>>
+
+h = {a: 10, b: 20, c: 30, d: 40, e: "A", f: 'B'}
+s = h.select {|k,v| v.is_a?(Integer)}
+
+>>>>>>>>>>>>
+
+h = {a: 10, b: 20, c: 30, d: 40, e: "A", f: 'B'}
+d = h.each {|k,v| h.delete(k) if v.is_a?(String)}
+
+>>>>>>>>>>>>
+
+dial_book = {
+  "newyork" => "212",
+  "newbrunswick" => "732",
+  "edison" => "908",
+  "plainsboro" => "609",
+  "sanfrancisco" => "301",
+  "miami" => "305",
+  "paloalto" => "650",
+  "evanston" => "847",
+  "orlando" => "407",
+  "lancaster" => "717"
+}
+
+def printAllKeys(key)
+   p key.keys
+end
+
+printAllKeys(dial_book)
+
+========================================= Loops ===================================================
+
+a = [1,2,3,4,5,6,7,8,9,10]
+a.each do |names|
+  if !names.odd?
+    puts "Even number is >> #{names}"
+  else
+     puts "Odd number is >> #{names}"
+  end
+end
+
+>>>>>>>>>>>>
+
+a = [1,2,3,4,5,6,7,8,9,10]
+a.each do |names|
+  puts "Even number is >> #{names}" if !names.odd?    
+ # end
+end
+
+>>>>>>>>>>>>
+
+def userInpute
+  puts "Enter ID"
+  id = gets.chomp
+  puts "Enter PS"
+  ps = gets.chomp
+  return {id: id, ps: ps}
+end
+dataBase = [
+              {u: "a", p: "p"},
+              {u: "b", p: "p"},
+              {u: "c", p: "p"},
+              {u: "d", p: "p"},
+              {u: "f", p: "p"},
+              {u: "f", p: "p"}
+]
+
+values = userInpute
+flag = true
+count = 1
+dataBase.each do |names|
+  if values[:id] == names[:u] && values[:ps] == names[:p] 
+    puts "Welcome" +  " U entered id \"#{values[:id]}\" ps is \"#{values[:ps]}\""
+    flag = false
+    break
+  end
+  count = count + 1
+  puts "Sorry You Entered Wrong ID and PS as \"#{values[:id]}\" and \"#{values[:ps]}\"" if flag && count == 7
+end
+
+Infinite loop >>>>>>>>>>>>
+ 
+ loop do 
+    puts "aniket"
+ end
+
+>>>>>>>>>>>>
+
+========================================= Objects ===================================================
+ >> Class name always start with capital letter
+class Tute
+  @names
+  @ages
+  def first_name (name)
+    @names = name
+  end
+
+  def to_s
+    "First name is: #{@names}"
+  end
+end
+obj = Tute.new
+puts obj                         # nil
+obj.first_name("Aniket")
+puts obj                         # Aniket
+
+>>>>>>>>>>>>
+
+class Tute
+  attr_accessor :name, :age
+  def initialize(name,age)
+    @names = name
+    @ages = age
+  end
+
+  def to_s
+    "First name is: #{@names} and age is #{@ages}"
+  end
+end
+
+Aniket  = Tute.new("Aniket",20)
+Vijay  = Tute.new("Vijay",10)
+
+puts Aniket
+puts Vijay
+
+>>>>>>>>>>>>
+
+class Persoon
+  attr_accessor :name, :age, :height
+end
+
+obj = Persoon.new
+obj.height = 10
+p obj.height
+
+>>>>>>>>>>>> below will throw undefine method exception
+
+class Persoon
+  @name
+  @age
+  @height
+end
+
+obj = Persoon.new
+obj.height = 10
+p obj.height
+
+>>>>>>>>>>>>
+
+class Persoon
+  attr_reader :name,:age,:height
+
+  def initialize(name, age, height)
+    @name = name
+    @age = age
+    @height = height
+  end
+
+end
+
+>>>>>>>>>>>> below to_s method direcly get called when we write puts behind object
+
+obj = Persoon.new("Aniket",28,6.5)
+p obj.name
+p obj.age
+p obj.height
+
+class Persoon
+  attr_reader :name,:age,:height
+
+  def initialize(name, age, height)
+    @name = name
+    @age = age
+    @height = height
+  end
+  def to_s
+    puts name
+    puts age
+    puts height
+  end
+end
+
+obj = Persoon.new("Aniket",28,6.5)
+puts obj
+
+========================================= Gems ===================================================
+
+gemfile true do 
+  source 'http://rubygems.org'
+  gem 'bcrypt'
+end  
+
+>>>>>>>>>>>>
+
+require 'bundler/inline'
+
+gemfile true do 
+  source 'http://rubygems.org'
+  gem 'bcrypt'
+end  
+
+require 'bcrypt'
+ 
+ my_password = BCrypt::Password.create("my password")
+  #=> "$2a$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa"
+ 
+   my_password.version              #=> "2a"
+   my_password.cost                 #=> 10
+   my_password == "my password"     #=> true
+   my_password == "not my password" #=> false
+
+   >>>>>>>>>>>>>
+   To Import other mdoule in our class
+   1.If this in same directory -> require_relative 'fileName'
+   2.If this in other directoy -> $LOAD_PATH << "."    
+                                  require 'fileName'
+
+  ========================================= Module ===================================================
+    If you create module then import it via "require_relative" and use mdoule method as
+    1. module_name.methodName
+    2. self.methodName
+
+  ========================================= Other ===================================================
+ 
+    a = [18, 22, 33, 4, 5, 6, 8]  
+        
+    # declaring arrays  
+    b = [18, 22, 33, 4, 5, 6]  
+
+    # <=> method 
+    puts "<=> method : #{a <=> b}\n\n"   >> work for a if a conains b then 1
+                                         >> If a == b then 0
+                                         >> If both disimilar then -1
+
+    Dir.pwd >> Return then current dir location
+    Gem::Platform.local >> reutrn os
+
+    ========================================= Rails ===================================================
+
+    1. Rails use MVC >> model view controller >>  create speration between presentation layer and buiness logic 
+    2. In app  folder
+                      Controller
+                      Models
+                      View
+
+    3. npm install --global yarn >> Use to install yarn
+    4. Bundler is a gem that was installed in our system during the Ruby installation process.>> You can install it by >>gem install bundler OR Update >>           	gem update bundler
+    5. Sqlite is a lightweight database which Rails applications use by default during development >> gem install sqlite3
+    6. Webpack is a JavaScript bundler which Rails 6 uses to manage its JavaScript assets. >>  The webpacker gem makes webpack available for use for our 	Rails applications. >> gem install webpacker
+    7. Open powershell in run as administrator >> gem install rails
+    8. To Create project >> rails new test_app >> cd test_app >> bundle install --gemfile C:/Windows/System32/test_app/Gemfile >> rails server OR rails s 
+    If fail failings >> 1.gem install lumberjack
+                        2.gem install bundler
+                        3.bundle install
+                        4.bundle install --without production
+	
+    9. When you write "root "application#hello"" int route.rb then it poits to controllers >> application_controller.rb > method "hello"
+   10. Use " rails generate controller pages" command to generate 
+   11. If user write in route.rb " root "pages#hello"" and then they are not able to find hello method in pages_controller then they will gonna find it in
+       application_controller
+   12. You can start rails server on other port also by >> rails server -p 3001
+   13. > def home
+       >  render html: 'Hello World!'
+       > end
+	Above coed you need to add in controller 
+   14. > def home
+       > end
+	This will expect a home.html.erb template under the pages folder under views (home.html.erb)
+
+
+
