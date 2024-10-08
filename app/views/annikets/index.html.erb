@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Annikets" %>
+
+<h1>Annikets</h1>
+
+<div id="annikets">
+  <% @annikets.each do |anniket| %>
+    <%= render anniket %>
+    <p>
+      <%= link_to "Show this anniket", anniket %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New anniket", new_anniket_path %>

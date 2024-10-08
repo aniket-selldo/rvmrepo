@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @anniket %>
+
+<div>
+  <%= link_to "Edit this anniket", edit_anniket_path(@anniket) %> |
+  <%= link_to "Back to annikets", annikets_path %>
+
+  <%= button_to "Destroy this anniket", @anniket, method: :delete %>
+</div>

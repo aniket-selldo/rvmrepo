@@ -1,0 +1,2 @@
+class Aniket < ApplicationRecord
+end
